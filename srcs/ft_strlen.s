@@ -12,6 +12,4 @@ increment:
 compare:
 			cmp		BYTE [rdi + rax], 0	; str[i] == 0
 			jne		increment
-
-done:
 			ret							; return i

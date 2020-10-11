@@ -8,15 +8,15 @@
 
 int	main(void)
 {
-	// char *src;
-	// char *dest;
-	// char *ret;
+	char *src;
+	char *dest;
+	char *ret;
 	// int  fd;
 	// int  ret_read;
 	// int ret_ft_read;
 
-	// src = malloc(19);
-	// dest = malloc(19);
+	src = "simon";
+	dest = malloc(19);
 	// memcpy(src, "hello world", 12);
 	// memcpy(dest, "bonan tagon mondo", 18);
 
@@ -25,11 +25,11 @@ int	main(void)
 	printf("\"testqsfndkjq\" : %ld\n", ft_strlen("testqsfndkjq"));
 	printf("\"dfvsxwvwestqsfndkjq\" : %ld\n", ft_strlen("dfvsxwvwestqsfndkjq"));
 
-	// printf("\n-- ft_strcpy --\n");
-	// printf("before :\n\tsrc : %s, dest : %s\n",
-	// 		src, dest);
-	// ret = ft_strcpy(dest, src);
-	// printf("after :\n\tsrc : %s, dest : %s\nret : %s\n", src, dest, ret);
+	printf("\n-- ft_strcpy --\n");
+	printf("before :\n\tsrc : %s, dest : %s\n", src, dest);
+	ret = ft_strcpy(dest, src);
+	write(1, dest, 4);
+	printf("after :\n\tsrc : %s, dest : %s\nret : %s\n", src, dest, ret);
 
 	// printf("\n-- ft_strcmp --\n");
 	// char *ms1 = "hello";
