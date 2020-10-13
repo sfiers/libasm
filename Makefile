@@ -4,7 +4,7 @@
 
 #	Sources
 
-SRCS =	$(SRCSDIR)/ft_strlen.s $(SRCSDIR)/ft_strcpy.s
+SRCS =	$(SRCSDIR)/ft_strlen.s $(SRCSDIR)/ft_strcpy.s $(SRCSDIR)/ft_strcmp.s $(SRCSDIR)/ft_write.s
 # $(SRCSDIR)/ft_strdup.s $(SRCSDIR)/ft_strlen.s $(SRCSDIR)/ft_strcpy.s \
 		# $(SRCSDIR)/ft_strcmp.s $(SRCSDIR)/ft_write.s $(SRCSDIR)/ft_strdup.s \
 		$(SRCSDIR)/ft_read.s
