@@ -4,6 +4,7 @@
 _ft_strcmp:
 			xor		rax, rax
             xor     r8, r8
+            xor     r9, r9
 			jmp		compare
 increment:
 			inc		rax
@@ -12,20 +13,9 @@ compare:
             cmp     r8b, 0
             je      lastchar
 			cmp		BYTE [rsi + rax], r8b
-			je		increment
-            ja      less
-            jb      above
+            je      increment
 lastchar:
-            cmp     r8b, [rsi + rax]
-            je      equal
-            jl      less
-            ja      above
-equal:
-            mov     rax, 0
-            ret
-less:
-            mov     rax, -1
-            ret
-above:
-            mov     rax, 1
+            mov     r9b, byte[rsi + rax]
+            sub     r8d, r9d
+            mov     eax, r8d
             ret
