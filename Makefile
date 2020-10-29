@@ -4,10 +4,9 @@
 
 #	Sources
 
-SRCS =	$(SRCSDIR)/ft_strlen.s $(SRCSDIR)/ft_strcpy.s $(SRCSDIR)/ft_strcmp.s $(SRCSDIR)/ft_write.s
-# $(SRCSDIR)/ft_strdup.s $(SRCSDIR)/ft_strlen.s $(SRCSDIR)/ft_strcpy.s \
-		# $(SRCSDIR)/ft_strcmp.s $(SRCSDIR)/ft_write.s $(SRCSDIR)/ft_strdup.s \
-		$(SRCSDIR)/ft_read.s
+SRCS =	$(SRCSDIR)/ft_strlen.s $(SRCSDIR)/ft_strcpy.s $(SRCSDIR)/ft_strcpy.s \
+$(SRCSDIR)/ft_strcmp.s $(SRCSDIR)/ft_write.s $(SRCSDIR)/ft_strdup.s \
+$(SRCSDIR)/ft_read.s
 
 SRCSDIR = ./srcs
 
@@ -24,6 +23,7 @@ HEADERDIR = .
 #	Name
 
 NAME =	libasm.a
+
 
 #	Compiler
 
@@ -46,11 +46,8 @@ $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@echo "libasm compiled succesfully"
 
-$(SRCSDIR)/%.o: %.a $(HEADERDIR)/$(HEADER)
-	@$(AS) $(ASFLAGS) -s -o $@ $<
-
 test: fclean all
-	${CC} ${CFLAGS} main.c ${NAME} -o test
+	${CC} ${CFLAGS} main.c -L. -lasm -o test
 
 clean:
 	/bin/rm -f $(OBJS)

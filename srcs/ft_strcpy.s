@@ -1,18 +1,16 @@
-        global  _ft_strcpy
+				global	_ft_strcpy
 
-        section .text
-
+        		section	.text
 _ft_strcpy:
-		xor		rax, rax
-
+				xor		rcx, rcx
 loop:
-		mov		r8b, [rsi + rax]
-		mov		[rdi + rax], r8b
-		cmp		r8b, 0
-		je		end
-		inc		rax
-		jmp		loop
-
+				mov		dl, byte [rsi + rcx]
+				mov		byte [rdi + rcx], dl
+				cmp		dl, 0
+				je		end
+				inc		rcx
+				jmp		loop
 end:
-		mov		rax, rdi
-		ret
+				mov		rax, rdi
+				ret
+
